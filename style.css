@@ -1,7 +1,15 @@
+:root {
+    --orange: #ff0000;
+    --green: #18b201;
+    --blue: #0456c8;
+    --ring-gray: rgba(254, 255, 255, 0.3);
+    --text-gray: #737373;
+}
+
 body {
     padding: 0;
     margin: 0;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     background-color: black;
     color: white;
 }
@@ -9,48 +17,63 @@ body {
 @keyframes ring {
     0% {
         transform: rotate(0deg);
-        box-shadow: 1px 2px 6px var(--blue);
+        box-shadow: 2px 4px 3px var(--orange);
     }
-    25% {
-        transform: rotate(90deg);
-        box-shadow: 3px 12px 6px white;
+
+    20% {
+        transform: rotate(72deg);
+        box-shadow: 2px 4px 200px white;
     }
-    50% {
-        transform: rotate(180deg);
-        box-shadow: 3px 12px 6px var(--green);
+
+    40% {
+        transform: rotate(144deg);
+        box-shadow: 2px 4px 3px var(--green);
     }
+
+    60% {
+        transform: rotate(216deg);
+        box-shadow: 2px 4px 3px rgb(0, 204, 255);
+    }
+
+    80% {
+        transform: rotate(288deg);
+        box-shadow: 2px 4px 3px var(--blue);
+    }
+
     100% {
         transform: rotate(360deg);
-        box-shadow: 1px 7px 6px blue;
+        box-shadow: 2px 4px 3px var(--orange);
     }
-    
 }
 
 @keyframes text-color {
     0% {
         color: var(--blue);
     }
-    50% {
-        color: var(--green);
+
+    25% {
+        color: red;
     }
+
+    50% {
+        color: white;
+    }
+
+    75% {
+        color: black;
+    }
+
     100% {
-        color: var(--orange);
+        color: var(--blue);
     }
 }
 
-:root {
-    --orange: #e65c00;
-    --green: #18b201;
-    --blue: #0456c8;
-    --ring-gray: rgba(254, 255, 255, 0.3);
-    --text-gray: #737373;
-}
 
 .loading {
     height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     text-align: center;
 }
 
@@ -70,14 +93,13 @@ body {
     width: 100%;
     border-radius: 50%;
     box-shadow: 0 0 6px var(--ring-gray);
-    animation: ring 2s linear infinite;
+    animation: ring 3s linear infinite;
 }
 
 .loading-text {
     text-transform: uppercase;
     font-size: 1.1rem;
     letter-spacing: 1px;
-    color: var(--text-gray);
-    animation: text-color 3s linear infinite;
-}
 
+    animation: text-color 3.5s linear infinite;
+}
